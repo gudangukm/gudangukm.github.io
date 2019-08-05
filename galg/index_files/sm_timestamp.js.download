@@ -1,0 +1,3 @@
+jQuery(document).ready(function($){$("a.spp-timestamp").click(function(){var time=$(this).attr("time");var listSoundIds=window.soundManager.soundIDs;var soundId=window.soundManager.soundIDs[0];if(listSoundIds[0]==null){$(".sm2-inline-button")[0].click();soundId=window.soundManager.soundIDs[0];soundManager.getSoundById(soundId).setPosition(time*1000);}
+else if(soundManager.getSoundById(soundId).paused){soundManager.getSoundById(soundId).setPosition(time*1000);setTimeout(function(){soundManager.resume(soundId);},500);}
+else{$(".sm2-inline-button")[0].click();soundManager.resume(soundId);soundManager.getSoundById(soundId).setPosition(time*1000);}});});
