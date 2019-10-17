@@ -1,56 +1,1664 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-
-<body>
-
-  <pre id="state">Loading posts ...</pre>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js" integrity="sha256-lrZTgsdM1iVdRigETFOU8u8/BmLX1ysQ8bzrULbuVFU="
-    crossorigin="anonymous"></script>
-
-  <script>
-    let state = {
-      posts: [],
-      baseUrl: 'https://cors-anywhere.herokuapp.com/http://member.saungseo.com/wp-json/wp/v2/posts',
-      perPage: '?per_page=14',
-      wpFetchHeaders: {
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Expose-Headers': 'x-wp-total'
-        }
-      }
-    }
-    async function getNumPosts() {
-      const { headers } = await axios(`${state.baseUrl}${state.perPage}`, state.wpFetchHeaders)
-      return headers['x-wp-totalpages']
-    }
-    async function fetchPosts(numPages) {
-      const posts = []
-      for (let page = 1; page <= numPages; page += 1) {
-        const post = axios.get(`${state.baseUrl}${state.perPage}&page=${page}`, state.wpFetchHeaders)
-        posts.push(post)
-      }
-      await axios.all(posts).then((response) => {
-        const postData = response.map(res => res.data)
-        state.posts = postData.flat()
-      }).catch(e => console.log('error fetching posts: ', e))
-      return true
-    }
-    state.posts = getNumPosts()
-      .then(numPosts => fetchPosts(numPosts))
-      .then((data) => {
-        console.log('data ', state)
-        document.getElementById('state').innerText = JSON.stringify(state, null, 4)
-      })
-  </script>
-
-</body>
-
-</html>
+{
+"id": 186,
+"date": "2019-08-28T15:16:21",
+"date_gmt": "2019-08-28T15:16:21",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=186"
+},
+"modified": "2019-08-31T04:42:58",
+"modified_gmt": "2019-08-31T04:42:58",
+"slug": "pengenalan-basic-pbn",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/pengenalan-basic-pbn/",
+"title": {
+"rendered": "1.1 Pengenalan &#038; Basic PBN Yang Wajib Di Pahami"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/1QOtLXzu2oiJ06tLAGqjXlK8blUJOWEcO/preview" width="740" height="400"></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<p><a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/1QOtLXzu2oiJ06tLAGqjXlK8blUJOWEcO/view?usp=sharing">Download Video Tutorial (12 Mb)</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="http://www.scrapebox.com/" target="_blank" rel="noopener">Scrapebox</a></li>
+<li><a href="https://ahrefs.com/" target="_blank" rel="noopener">Ahrefs</a></li>
+<li><a href="https://www.hostnine.com/reseller/" target="_blank" rel="noopener">Hostnine &#8211; Reseller Package</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "",
+"protected": false
+},
+"author": 1,
+"featured_media": 29,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/186"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=186"
+}
+],
+"version-history": [
+{
+"count": 9,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/186/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 216,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/186/revisions/216"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/29"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=186"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=186"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=186"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+},
+{
+"id": 193,
+"date": "2019-08-29T15:13:38",
+"date_gmt": "2019-08-29T15:13:38",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=193"
+},
+"modified": "2019-08-31T04:43:27",
+"modified_gmt": "2019-08-31T04:43:27",
+"slug": "tools-biaya-pembuatan-pbn",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/tools-biaya-pembuatan-pbn/",
+"title": {
+"rendered": "1.2 &#8211; Pengenalan Part 2 &#8211; Tools &#038; Biaya Pembuatan PBN"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/1iyosJPpgHi1wcrUWZKe0bJtOvfExap_C/preview" width="740" height="400"><span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<p><a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/1iyosJPpgHi1wcrUWZKe0bJtOvfExap_C/view?usp=sharing">Download Video Tutorial (42 Mb)</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="http://www.scrapebox.com/" target="_blank" rel="noopener">Scrapebox</a></li>
+<li><a href="https://ahrefs.com/" target="_blank" rel="noopener">Ahrefs</a></li>
+<li><a href="https://www.hostnine.com/reseller/" target="_blank" rel="noopener">Hostnine &#8211; Reseller Package</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "<p>﻿</p>
+",
+"protected": false
+},
+"author": 1,
+"featured_media": 32,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/193"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=193"
+}
+],
+"version-history": [
+{
+"count": 12,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/193/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 217,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/193/revisions/217"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/32"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=193"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=193"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=193"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+},
+{
+"id": 209,
+"date": "2019-08-31T03:59:53",
+"date_gmt": "2019-08-31T03:59:53",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=209"
+},
+"modified": "2019-08-31T04:43:38",
+"modified_gmt": "2019-08-31T04:43:38",
+"slug": "3-domain-scraping-pencarian-domain-part-1",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/3-domain-scraping-pencarian-domain-part-1/",
+"title": {
+"rendered": "2.1 Domain Scraping (Pencarian Domain) Part &#8211; 1"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/1m7KA-U6Kx711GssZFF5xLlRDKVvQiFlX/preview" width="740" height="400"></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<p><a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/1m7KA-U6Kx711GssZFF5xLlRDKVvQiFlX/view">Download Video Tutorial (35 Mb)</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="http://www.scrapebox.com/" target="_blank" rel="noopener">Scrapebox</a></li>
+<li><a href="https://ahrefs.com/" target="_blank" rel="noopener">Ahrefs</a></li>
+<li><a href="https://domainpunch.com/dna/" target="_blank" rel="noopener">Domain Name Anayzer</a></li>
+<li><a href="http://expireddomains.net" target="_blank" rel="noopener">Expireddomains.net</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "",
+"protected": false
+},
+"author": 1,
+"featured_media": 31,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/209"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=209"
+}
+],
+"version-history": [
+{
+"count": 3,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/209/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 218,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/209/revisions/218"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/31"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=209"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=209"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=209"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+},
+{
+"id": 212,
+"date": "2019-08-31T04:16:04",
+"date_gmt": "2019-08-31T04:16:04",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=212"
+},
+"modified": "2019-08-31T04:42:29",
+"modified_gmt": "2019-08-31T04:42:29",
+"slug": "4-domain-scraping-pencarian-domain-part-2",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/4-domain-scraping-pencarian-domain-part-2/",
+"title": {
+"rendered": "2.2 Domain Scraping (Pencarian Domain) Part &#8211; 2"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/1agft8-91PZOW2K2f5LjRtAfZWvCw0zE2/preview" width="740" height="400"></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<p><a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/1agft8-91PZOW2K2f5LjRtAfZWvCw0zE2/view">Download Video Tutorial (8 Mb)</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="http://www.scrapebox.com/" target="_blank" rel="noopener">Scrapebox</a></li>
+<li><a href="https://ahrefs.com/" target="_blank" rel="noopener">Ahrefs</a></li>
+<li><a href="https://domainpunch.com/dna/" target="_blank" rel="noopener">Domain Name Anayzer</a></li>
+<li><a href="http://expireddomains.net" target="_blank" rel="noopener">Expireddomains.net</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "",
+"protected": false
+},
+"author": 1,
+"featured_media": 32,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/212"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=212"
+}
+],
+"version-history": [
+{
+"count": 4,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/212/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 220,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/212/revisions/220"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/32"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=212"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=212"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=212"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+},
+{
+"id": 219,
+"date": "2019-08-31T04:50:32",
+"date_gmt": "2019-08-31T04:50:32",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=219"
+},
+"modified": "2019-08-31T04:50:32",
+"modified_gmt": "2019-08-31T04:50:32",
+"slug": "2-3-domain-scraping-pencarian-domain-part-3-1",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/2-3-domain-scraping-pencarian-domain-part-3-1/",
+"title": {
+"rendered": "2.3 Domain Scraping (Pencarian Domain) Part &#8211; 3.1"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/1tSxP3J6ft-POcmBNWqPJZhe1c8WUUzw9/preview" width="740" height="400"></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<p><a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/1tSxP3J6ft-POcmBNWqPJZhe1c8WUUzw9/view">Download Video Tutorial (80 Mb)</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="http://www.scrapebox.com/" target="_blank" rel="noopener">Scrapebox</a></li>
+<li><a href="https://ahrefs.com/" target="_blank" rel="noopener">Ahrefs</a></li>
+<li><a href="https://domainpunch.com/dna/" target="_blank" rel="noopener">Domain Name Anayzer</a></li>
+<li><a href="http://expireddomains.net" target="_blank" rel="noopener">Expireddomains.net</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "",
+"protected": false
+},
+"author": 1,
+"featured_media": 29,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/219"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=219"
+}
+],
+"version-history": [
+{
+"count": 1,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/219/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 221,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/219/revisions/221"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/29"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=219"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=219"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=219"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+},
+{
+"id": 222,
+"date": "2019-08-31T04:57:19",
+"date_gmt": "2019-08-31T04:57:19",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=222"
+},
+"modified": "2019-08-31T04:57:19",
+"modified_gmt": "2019-08-31T04:57:19",
+"slug": "2-4-domain-scraping-pencarian-domain-part-3-2",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/2-4-domain-scraping-pencarian-domain-part-3-2/",
+"title": {
+"rendered": "2.4 Domain Scraping (Pencarian Domain) Part &#8211; 3.2"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/15PSylhkcJv_kGgKffAi6X2JU7mUYw0sl/preview" width="740" height="400"></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<p><a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/15PSylhkcJv_kGgKffAi6X2JU7mUYw0sl/view">Download Video Tutorial (39 Mb)</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="http://www.scrapebox.com/" target="_blank" rel="noopener">Scrapebox</a></li>
+<li><a href="https://ahrefs.com/" target="_blank" rel="noopener">Ahrefs</a></li>
+<li><a href="https://domainpunch.com/dna/" target="_blank" rel="noopener">Domain Name Anayzer</a></li>
+<li><a href="http://expireddomains.net" target="_blank" rel="noopener">Expireddomains.net</a></li>
+<li><a href="http://www.ohashi.us/domaincleaner/" target="_blank" rel="noopener">Domain Cleaner</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "",
+"protected": false
+},
+"author": 1,
+"featured_media": 25,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/222"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=222"
+}
+],
+"version-history": [
+{
+"count": 1,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/222/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 223,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/222/revisions/223"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/25"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=222"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=222"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=222"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+},
+{
+"id": 224,
+"date": "2019-08-31T05:24:13",
+"date_gmt": "2019-08-31T05:24:13",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=224"
+},
+"modified": "2019-08-31T05:39:06",
+"modified_gmt": "2019-08-31T05:39:06",
+"slug": "3-1-filter-history-profile-domain-spam-checking-part-1",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/3-1-filter-history-profile-domain-spam-checking-part-1/",
+"title": {
+"rendered": "3.1 Filter History Profile (Domain Spam Checking) Part &#8211; 1"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/1xmrthIojC-33K8bHLUrwQzU9_C5Ra96q/preview" width="740" height="400"></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/1xmrthIojC-33K8bHLUrwQzU9_C5Ra96q/view">Download Video Tutorial (32 Mb)</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="http://www.scrapebox.com/" target="_blank" rel="noopener">Scrapebox</a></li>
+<li><a href="https://ahrefs.com/" target="_blank" rel="noopener">Ahrefs</a></li>
+<li><a href="http://web.archive.org/" target="_blank" rel="noopener">Wayback Machine</a></li>
+<li><a href="https://github.com/internetarchive/wayback/tree/master/wayback-cdx-server" target="_blank" rel="noopener">Wayback CDX API</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "",
+"protected": false
+},
+"author": 1,
+"featured_media": 26,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/224"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=224"
+}
+],
+"version-history": [
+{
+"count": 12,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/224/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 238,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/224/revisions/238"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/26"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=224"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=224"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=224"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+},
+{
+"id": 236,
+"date": "2019-08-31T05:38:31",
+"date_gmt": "2019-08-31T05:38:31",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=236"
+},
+"modified": "2019-08-31T05:47:30",
+"modified_gmt": "2019-08-31T05:47:30",
+"slug": "3-2-filter-history-profile-domain-spam-checking-part-2",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/3-2-filter-history-profile-domain-spam-checking-part-2/",
+"title": {
+"rendered": "3.2 Filter History Profile (Domain Spam Checking) Part &#8211; 2"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/1l9ZUTQFtpFSXYE-yAqhnrturjKPxFdEd/preview" width="740" height="400"></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/1l9ZUTQFtpFSXYE-yAqhnrturjKPxFdEd/view">Download Video Tutorial (72 Mb)</a>
+<p>&nbsp;</p>
+<h3><strong>DOWNLOAD MATERIAL :</strong></h3>
+<a class="btn shortcode-btn is-default" style="background-color: #2e7171" target="_blank"  href="https://drive.google.com/file/d/11IwU6xCodh1bTgLnKQS2_LfRv5A04NYZ/view">Download Marge Scrapebox Wayback</a>
+<a class="btn shortcode-btn is-default" style="background-color: #2e7171" target="_blank"  href="https://drive.google.com/file/d/1S35SXYFlXKCUT8rDnH5izoL_gDS12bu_/view">Download Cleaner Misc (.xlsx File)</a>
+<a class="btn shortcode-btn is-default" style="background-color: #2e7171" target="_blank"  href="https://drive.google.com/file/d/1uabusIR79BvndQCuNSnQTl1ZK5l3n8o4/view">Download Spam Words</a>
+<p><a class="btn shortcode-btn is-default" style="background-color: #2e7171" target="_blank"  href="https://drive.google.com/file/d/1pTJsIaTCyfc-kFiNPKJac7c4YPzfKG-p/view">Download Spam History Scrapebox</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="http://www.scrapebox.com/" target="_blank" rel="noopener">Scrapebox</a></li>
+<li><a href="https://ahrefs.com/" target="_blank" rel="noopener">Ahrefs</a></li>
+<li><a href="http://web.archive.org/" target="_blank" rel="noopener">Wayback Machine</a></li>
+<li><a href="https://github.com/internetarchive/wayback/tree/master/wayback-cdx-server" target="_blank" rel="noopener">Wayback CDX API</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "",
+"protected": false
+},
+"author": 1,
+"featured_media": 22,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/236"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=236"
+}
+],
+"version-history": [
+{
+"count": 3,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/236/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 240,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/236/revisions/240"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/22"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=236"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=236"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=236"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+},
+{
+"id": 242,
+"date": "2019-08-31T06:45:41",
+"date_gmt": "2019-08-31T06:45:41",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=242"
+},
+"modified": "2019-08-31T06:53:18",
+"modified_gmt": "2019-08-31T06:53:18",
+"slug": "4-1-filter-backlinkprofile-kualitas-backlink-domain-part-1",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/4-1-filter-backlinkprofile-kualitas-backlink-domain-part-1/",
+"title": {
+"rendered": "4.1 Filter BacklinkProfile (Kualitas Backlink Domain) Part &#8211; 1"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/128d690-OKwxINQHRH69vK4jc64IJ6vT0/preview" width="740" height="400"></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/128d690-OKwxINQHRH69vK4jc64IJ6vT0/view">Download Video Tutorial (74 Mb)</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="http://www.scrapebox.com/" target="_blank" rel="noopener">Scrapebox</a></li>
+<li><a href="https://ahrefs.com/" target="_blank" rel="noopener">Ahrefs</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "",
+"protected": false
+},
+"author": 1,
+"featured_media": 31,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/242"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=242"
+}
+],
+"version-history": [
+{
+"count": 2,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/242/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 244,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/242/revisions/244"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/31"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=242"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=242"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=242"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+},
+{
+"id": 245,
+"date": "2019-08-31T06:55:13",
+"date_gmt": "2019-08-31T06:55:13",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=245"
+},
+"modified": "2019-08-31T06:55:29",
+"modified_gmt": "2019-08-31T06:55:29",
+"slug": "4-2-filter-backlinkprofile-kualitas-backlink-domain-part-2",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/4-2-filter-backlinkprofile-kualitas-backlink-domain-part-2/",
+"title": {
+"rendered": "4.2 Filter BacklinkProfile (Kualitas Backlink Domain) Part &#8211; 2"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/12NosBfPTlNYyqNOMJy0cI_9wFR8C1T9m/preview" width="740" height="400"></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/12NosBfPTlNYyqNOMJy0cI_9wFR8C1T9m/view">Download Video Tutorial (57 Mb)</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="http://www.scrapebox.com/" target="_blank" rel="noopener">Scrapebox</a></li>
+<li><a href="https://ahrefs.com/" target="_blank" rel="noopener">Ahrefs</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "",
+"protected": false
+},
+"author": 1,
+"featured_media": 26,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/245"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=245"
+}
+],
+"version-history": [
+{
+"count": 2,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/245/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 247,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/245/revisions/247"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/26"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=245"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=245"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=245"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+},
+{
+"id": 248,
+"date": "2019-08-31T07:03:40",
+"date_gmt": "2019-08-31T07:03:40",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=248"
+},
+"modified": "2019-08-31T07:11:18",
+"modified_gmt": "2019-08-31T07:11:18",
+"slug": "5-1-setup-footprint-custom-ns-dns-part-1",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/5-1-setup-footprint-custom-ns-dns-part-1/",
+"title": {
+"rendered": "5.1 Setup Footprint &#8211; Custom NS &#038; DNS Part &#8211; 1"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/1ps9OKbZ6Ng0SpnDzpdXvFCNYhPWGKqlE/preview" width="740" height="400"></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/1ps9OKbZ6Ng0SpnDzpdXvFCNYhPWGKqlE/view">Download Video Tutorial (14 Mb)</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="https://www.hostnine.com/reseller/" target="_blank" rel="noopener">Hostnine Reseller Pack</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "",
+"protected": false
+},
+"author": 1,
+"featured_media": 25,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/248"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=248"
+}
+],
+"version-history": [
+{
+"count": 2,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/248/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 251,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/248/revisions/251"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/25"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=248"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=248"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=248"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+},
+{
+"id": 250,
+"date": "2019-08-31T07:15:08",
+"date_gmt": "2019-08-31T07:15:08",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=250"
+},
+"modified": "2019-08-31T07:23:26",
+"modified_gmt": "2019-08-31T07:23:26",
+"slug": "5-1-setup-footprint-custom-ns-dns-part-1-2",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/5-1-setup-footprint-custom-ns-dns-part-1-2/",
+"title": {
+"rendered": "5.2 Setup Footprint &#8211; Custom NS &#038; DNS Part &#8211; 2"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/1o8o80VEFUuWgTgU5vWoAanAIx9kjW6rV/preview" width="740" height="400"><span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/1o8o80VEFUuWgTgU5vWoAanAIx9kjW6rV/view">Download Video Tutorial (22 Mb)</a>
+<p>&nbsp;</p>
+<h3><strong>DOWNLOAD MATERIAL:</strong></h3>
+<a class="btn shortcode-btn is-default" style="background-color: #2e7171" target="_blank"  href="https://drive.google.com/file/d/1Px6pfEHbM9M9KpBnkL2mHpnGUNAw2G09/view">Download IP Hostnine</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="https://www.hostnine.com/reseller/" target="_blank" rel="noopener">Hostnine Reseller Pack</a></li>
+<li><a href="http://namesilo.com" target="_blank" rel="noopener">Namesilo</a></li>
+<li><a href="http://namecheap.com" target="_blank" rel="noopener">Namecheap</a></li>
+<li><a href="http://godaddy.com" target="_blank" rel="noopener">Godaddy</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "<p>﻿</p>
+",
+"protected": false
+},
+"author": 1,
+"featured_media": 30,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/250"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=250"
+}
+],
+"version-history": [
+{
+"count": 3,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/250/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 255,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/250/revisions/255"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/30"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=250"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=250"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=250"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+},
+{
+"id": 254,
+"date": "2019-08-31T07:30:56",
+"date_gmt": "2019-08-31T07:30:56",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=254"
+},
+"modified": "2019-08-31T07:32:21",
+"modified_gmt": "2019-08-31T07:32:21",
+"slug": "6-1-setup-pbn-install-pbn-part-2",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/6-1-setup-pbn-install-pbn-part-2/",
+"title": {
+"rendered": "6.1 Setup PBN &#8211; Install PBN Part &#8211; 1"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/107-SiqCCH61c855mfzZB1rG8DpB50w8D/preview" width="740" height="400"><span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/107-SiqCCH61c855mfzZB1rG8DpB50w8D/view">Download Video Tutorial (17 Mb)</a>
+<p>&nbsp;</p>
+<h3><strong>DOWNLOAD MATERIAL:</strong></h3>
+<a class="btn shortcode-btn is-default" style="background-color: #2e7171" target="_blank"  href="https://drive.google.com/file/d/1QUqKvl6Bhvl1zmxMibom0-3DWlo_UU9f/view">Download MASTER PBN</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="https://www.hostnine.com/reseller/" target="_blank" rel="noopener">Hostnine Reseller Pack</a></li>
+<li><a href="http://namesilo.com" target="_blank" rel="noopener">Namesilo</a></li>
+<li><a href="http://namecheap.com" target="_blank" rel="noopener">Namecheap</a></li>
+<li><a href="http://godaddy.com" target="_blank" rel="noopener">Godaddy</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "<p>﻿</p>
+",
+"protected": false
+},
+"author": 1,
+"featured_media": 32,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/254"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=254"
+}
+],
+"version-history": [
+{
+"count": 2,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/254/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 258,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/254/revisions/258"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/32"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=254"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=254"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=254"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+},
+{
+"id": 257,
+"date": "2019-08-31T07:35:08",
+"date_gmt": "2019-08-31T07:35:08",
+"guid": {
+"rendered": "http://member.saungseo.com/?p=257"
+},
+"modified": "2019-08-31T07:40:20",
+"modified_gmt": "2019-08-31T07:40:20",
+"slug": "6-2-setup-pbn-install-pbn-part-2",
+"status": "publish",
+"type": "post",
+"link": "http://member.saungseo.com/6-2-setup-pbn-install-pbn-part-2/",
+"title": {
+"rendered": "6.2 Setup PBN &#8211; Install PBN Part &#8211; 2"
+},
+"content": {
+"rendered": "<p><iframe src="https://drive.google.com/file/d/16kWgGn_UMTrT9jpBD_3L3scI3iQ8wpdl/preview" width="740" height="400"><span data-mce-type="bookmark" style="display: inline-block; width: 0px; overflow: hidden; line-height: 0;" class="mce_SELRES_start">﻿</span></iframe></p>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>DOWNLOAD VIDEO :</strong></h3>
+<a class="btn shortcode-btn is-default"  target="_blank"  href="https://drive.google.com/file/d/16kWgGn_UMTrT9jpBD_3L3scI3iQ8wpdl/view">Download Video Tutorial (45 Mb)</a>
+<p>&nbsp;</p>
+<h3><strong>DOWNLOAD MATERIAL:</strong></h3>
+<a class="btn shortcode-btn is-default" style="background-color: #2e7171" target="_blank"  href="https://drive.google.com/file/d/1_KgDMEArLJilj_GMkFMSUxJkz1qcYCvg/view">Download Theme</a></div>
+<div class="shortcode-col col-sm-6 col-sx-12"><h3><strong>RESOURCE LINK :</strong></h3>
+<ul>
+<li><a href="https://www.hostnine.com/reseller/" target="_blank" rel="noopener">Hostnine Reseller Pack</a></li>
+<li><a href="http://namesilo.com" target="_blank" rel="noopener">Namesilo</a></li>
+<li><a href="http://namecheap.com" target="_blank" rel="noopener">Namecheap</a></li>
+<li><a href="http://godaddy.com" target="_blank" rel="noopener">Godaddy</a></li>
+</ul></div>
+",
+"protected": false
+},
+"excerpt": {
+"rendered": "<p>﻿</p>
+",
+"protected": false
+},
+"author": 1,
+"featured_media": 22,
+"comment_status": "open",
+"ping_status": "open",
+"sticky": false,
+"template": "",
+"format": "video",
+"meta": [],
+"categories": [
+13
+],
+"tags": [],
+"_links": {
+"self": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/257"
+}
+],
+"collection": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts"
+}
+],
+"about": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/types/post"
+}
+],
+"author": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/users/1"
+}
+],
+"replies": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/comments?post=257"
+}
+],
+"version-history": [
+{
+"count": 3,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/257/revisions"
+}
+],
+"predecessor-version": [
+{
+"id": 261,
+"href": "http://member.saungseo.com/wp-json/wp/v2/posts/257/revisions/261"
+}
+],
+"wp:featuredmedia": [
+{
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/media/22"
+}
+],
+"wp:attachment": [
+{
+"href": "http://member.saungseo.com/wp-json/wp/v2/media?parent=257"
+}
+],
+"wp:term": [
+{
+"taxonomy": "category",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/categories?post=257"
+},
+{
+"taxonomy": "post_tag",
+"embeddable": true,
+"href": "http://member.saungseo.com/wp-json/wp/v2/tags?post=257"
+}
+],
+"curies": [
+{
+"name": "wp",
+"href": "https://api.w.org/{rel}",
+"templated": true
+}
+]
+}
+}
+]
