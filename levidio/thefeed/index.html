@@ -1,0 +1,955 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="icon" type="image/png" href="https://member.rootpixel.net/img/favicon/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="https://member.rootpixel.net/img/favicon/favicon-16x16.png" sizes="16x16" />
+<link rel="stylesheet" href="https://member.rootpixel.net/plugin/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" href="https://member.rootpixel.net/plugin/dripicons/dripicons.css">
+<link rel="stylesheet" href="https://member.rootpixel.net/plugin/fontawesome/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://member.rootpixel.net/plugin/chart/Chart.min.css">
+<link rel="stylesheet" href="https://member.rootpixel.net/plugin/sweetalert/sweetalert2.min.css">
+<link rel="stylesheet" href="https://member.rootpixel.net/css/app.min.css">
+<link rel="stylesheet" href="https://member.rootpixel.net/plugin/bootstrap-select/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="https://member.rootpixel.net/plugin/bootstrap-datepicker/bootstrap-datetimepicker.min.css">
+<style>
+        #mBonus .modal-dialog .modal-content {
+            max-height: 90vh;
+            overflow: hidden;
+        }
+
+        .box-scroll {
+            height: 340px;
+            padding: 0 20px 0 0;
+            margin-right: -10px;
+            overflow: auto;
+        }
+
+        .box-scroll::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        .box-scroll::-webkit-scrollbar-track {
+            background-color: #eee;
+        }
+
+        .box-scroll::-webkit-scrollbar-thumb {
+            background-color: #ddd;
+        }
+
+        @media  only screen and (max-width: 768px) {
+            #mBonus .modal-dialog .modal-content {
+                height: unset;
+                max-height: unset;
+                overflow: unset;
+            }
+
+            .box-scroll {
+                height: unset;
+                padding: 0;
+                margin-right: 0;
+                overflow: unset;
+            }
+        }
+    </style>
+<title>Akses Produk - Produk -             Member  Dashboard</title>
+</head>
+<body class="dashboard">
+<div class="modal fade" id="modal-comingsoon" tabindex="-1" role="dialog" aria-labelledby="modal-edit-profileLabel" aria-hidden="true">
+<div class="modal-dialog" role="document">
+<div class="modal-content pb-5">
+<div class="modal-header border-none">
+<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body tx-center px-md-5" style="box-sizing: border-box;">
+<img src="https://member.rootpixel.net/img/commingsoon/1.png" alt="" width="90%" class="mx-auto smoothZoom-animation-3">
+<h5 class="tx-primary tx-32 tx-xs-24 tx-weight-8 mt-5">Coming Soon</h5>
+</div>
+</div>
+</div>
+</div>
+<nav class="top-navbar">
+<div class="row">
+<div class="col-3 my-auto no-gutter px-2 ">
+<div class="breadcrumb d-none d-lg-block">
+Dashboard / Produk / Produk Saya / Akses </div>
+<a href="#sidebar-collapse" id="sidebar-collapse-button" onclick="showSidebar('sidebar-collapse-button')">
+<img id="sidebar-toggle" class="sidenav-icon d-lg-none d-inline-block" src="https://member.rootpixel.net/img/icons/sidenav-icon.png" alt="">
+</a>
+<div class="page-title d-lg-none d-sm-inline-block d-none">Profil</div>
+</div>
+<div class="col-9 text-right my-auto ">
+ <div class="navbar-menu ">
+<div class="btn-group">
+<div data-toggle="dropdown" id="dropdown-notification">
+<img src="https://member.rootpixel.net/img/icons/navbar/bell.svg" alt="" class="navbar-menu-img">
+<span class="navbar-menu-notification"></span>
+</div>
+<div class="dropdown-menu dropdown-menu-notification tx-12 pt-2 pb-0" id="dropdown-menu-notification-refresh">
+<div class="tx-midnight tx-weight-8 tx-18 my-3 px-4 overflow-hidden">Notifikasi
+<div class="badge badge-secondary hover-bg-color-dark float-right py-1" id="notification-refresh">
+<img src=" https://member.rootpixel.net/img/icons/refresh-white.png " width="15px" alt="">
+</div>
+</div>
+<ul class="list-group list-group-flush " style="overflow-y:auto; overflow-x:hidden; max-height:300px;" id="notification-list">
+<hr class="divider my-0" style="height:0;">
+<a href="https://member.rootpixel.net/dashboard/member/myproduct" class="tx-softgray">
+<li class="media px-4 py-3 hover-bg-color-light-5 fade-animation-2">
+<div class="w-40px h-40px img-fit-cover rd-circle mr-3">
+<img src="https://account.rootpixel.net/storage/avatar/default-admin.jpeg" alt="..." class="">
+</div>
+<div class="media-body tx-8">
+<h6 class="mt-0 mb-0 tx-14 tx-weight-7" style="line-height: 1.8em;">Rootpixel,</h6>
+<p class="my-0 tx-10" style="line-height: 1em;">
+Pembayaran pesanan <b>INVBQRHGORO</b> telah diterima. Akses produk anda sekarang
+</p>
+<span class="tx-10" style="line-height: 1em;">1 menit yang lalu</span>
+</div>
+</li>
+</a>
+<hr class="divider my-0" style="height:0;">
+<a href="https://member.rootpixel.net/dashboard/member/transaction/INVBQRHGORO" class="tx-softgray">
+<li class="media px-4 py-3 hover-bg-color-light-5 fade-animation-2">
+<div class="w-40px h-40px img-fit-cover rd-circle mr-3">
+<img src="https://account.rootpixel.net/storage/avatar/default-admin.jpeg" alt="..." class="">
+</div>
+<div class="media-body tx-8">
+<h6 class="mt-0 mb-0 tx-14 tx-weight-7" style="line-height: 1.8em;">Rootpixel,</h6>
+<p class="my-0 tx-10" style="line-height: 1em;">
+Terima kasih telah melakukan pembayaran <b>INVBQRHGORO</b>. Mohon menunggu <b>Admin</b> untuk verifikasi pembayaran anda maksimal <b>2 x 24 jam</b>
+</p>
+<span class="tx-10" style="line-height: 1em;">2 menit yang lalu</span>
+</div>
+</li>
+</a>
+<hr class="divider my-0" style="height:0;">
+<a href="https://member.rootpixel.net/dashboard/member/transaction/INVBQRHGORO" class="tx-softgray">
+<li class="media px-4 py-3 hover-bg-color-light-5 fade-animation-2">
+<div class="w-40px h-40px img-fit-cover rd-circle mr-3">
+<img src="https://account.rootpixel.net/storage/avatar/default-admin.jpeg" alt="..." class="">
+</div>
+<div class="media-body tx-8">
+<h6 class="mt-0 mb-0 tx-14 tx-weight-7" style="line-height: 1.8em;">Rootpixel,</h6>
+<p class="my-0 tx-10" style="line-height: 1em;">
+pesanan anda dengan invoice (INVBQRHGORO) berhasil dibuat
+</p>
+<span class="tx-10" style="line-height: 1em;">5 menit yang lalu</span>
+</div>
+</li>
+</a>
+</ul>
+<a href="https://member.rootpixel.net/dashboard/member/notifications" class="btn btn-block rd-none bg-primary-1 tx-primary tx-10 tx-weight-7 d-block py-2 tx-center hover-bg-color-primary-7 hover-color-white" id="navbar-notification-count">
+Lihat Semua Notifkasi (3)
+</a>
+</div>
+</div>
+</div>
+<div class="navbar-menu new mr-0">
+<a href="https://member.rootpixel.net/member/cart/detail">
+<img src="https://member.rootpixel.net/img/icons/navbar/cart.svg" alt="">
+</a>
+</div>
+<div class="btn-group">
+<div data-toggle="dropdown" class="profile">
+<span class="d-none d-xl-inline-block">Anymous</span>
+<img class="profile-photo" src="https://account.rootpixel.net/storage/avatar/default.png" alt="">
+</div>
+<div class="dropdown-menu dropdown-menu-profile tx-12" style="left: 0;">
+<a class="dropdown-item tx-softgray" href="https://member.rootpixel.net/dashboard/member/profile"><img src="https://member.rootpixel.net/img/icons/user.png" target="_blank" width="10px" alt="" class="mr-2">Profile</a>
+<hr class="divider my-0 mx-4" style="height:0;">
+<a class="dropdown-item tx-softgray" href="https://account.rootpixel.net/handle/logout"><img src="https://member.rootpixel.net/img/icons/logout-dark.png" width="10px" alt="" class="mr-2">Logout</a>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<div class="sidebar sidebar-collapse">
+<div class="sidebar-content">
+<img class="logo logo-sidebar" src="https://member.rootpixel.net/img/logo-member.png" alt="">
+</div>
+<div class="profile">
+<div class="photo">
+<img src="https://account.rootpixel.net/storage/avatar/default.png" alt="">
+</div>
+<div class="name">Anymous</div>
+<div class="username">@anymous</div>
+</div>
+<div class="sidebar-scroll">
+<div class="separator"></div>
+<div class="sidebar-content">
+<div class="menu" data-toggle="collapse" href="#submenu-overview">
+Overview
+</div>
+<div id="submenu-overview" class="collapse show submenu">
+<a href="https://member.rootpixel.net/dashboard/member" class="">
+<img class="sidebar-icon" src="https://member.rootpixel.net/img/icons/sidebar/dashboard.png" alt=""> Dashboard
+</a>
+</div>
+</div>
+<div class="separator"></div>
+<div class="sidebar-content">
+<div class="menu" data-toggle="collapse" href="#submenu-produk">Produk</div>
+<div id="submenu-produk" class="collapse show submenu">
+<a href="https://member.rootpixel.net/dashboard/member/product" class="">
+<img class="sidebar-icon" src="https://member.rootpixel.net/img/icons/sidebar/product-all.png" alt=""> Semua
+Produk</a>
+<a href="https://member.rootpixel.net/dashboard/member/myproduct" class="active">
+<img class="sidebar-icon" src="https://member.rootpixel.net/img/icons/sidebar/product-purchased.png" alt="">
+Produk Saya</a>
+<a data-toggle="modal" data-target="#modal-comingsoon"><img class="sidebar-icon" src="https://member.rootpixel.net/img/icons/sidebar/product-license.png" alt="">
+Lisensi</a>
+<a href="https://member.rootpixel.net/dashboard/member/transaction" class="">
+<img class="sidebar-icon" src="https://member.rootpixel.net/img/icons/sidebar/product-transaction.png" alt="">
+Transaksi</a>
+</div>
+</div>
+<div class="separator"></div>
+<div class="sidebar-content">
+<div class="menu locked" data-toggle="collapse" href="#submenu-affiliasi">
+Affiliate
+</div>
+</div>
+</div>
+</div>
+<div class="container-xl">
+<div class="content product">
+
+<div class="row mb-4">
+<div class="col">
+<div class="card">
+<div class="card-body">
+<div class="row d-flex align-items-center">
+<div class="col-auto d-none d-lg-block">
+<div class="img-placeholder w-70px h-70px">
+<img src="https://member.rootpixel.net/img/icons/arsip.png" alt="">
+</div>
+</div>
+<div class="col-12 col-lg-8">
+<h6 class="tx-weight-8 tx-black">Akses Produk Levidio The Feed</h6>
+<p class="tx-bold tx-softgray mb-0">Silahkan akses produk levidio melalui link yang sudah
+disediakan dibawah. Anda dapat melakukan download akses produk secara berkala sesuai
+keinginan anda.</p>
+</div>
+<div class="col-12 col-lg align-middle pl-0 pl-lg-4">
+<a href="https://member.rootpixel.net/dashboard/member/myproduct">
+<button class="btn btn-outline-softgray btn-block mt-3 mt-lg-0"><img src="https://member.rootpixel.net/img/icons/arrow-back.png" class="w-15px mr-4" alt="">Kembali
+</button>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col">
+<a href="https://rootpixel.box.com/shared/static/83d4terhizutsvb91vacm3rerk56hbag.zip" target="_blank">
+<div class="card bg-tosca tx-white">
+<div class="card-body tx-center h-225px">
+<img src="https://member.rootpixel.net/img/badges/medal.png" class="w-70px mb-2" alt="medal">
+<h5 class="tx-weight-8">Developer License</h5>
+<p class="tx-bold tx-height-3">Download Lisensi Produk Levidio Thefeed, Aturan Pakai dan Font Levidio The Feed</p>
+<img src="https://member.rootpixel.net/img/icons/download.png" class="w-20px button-top-right" alt="download">
+</div>
+</div>
+</a>
+</div>
+</div>
+
+
+
+
+<div class="row">
+<div class="col-lg-8">
+<div class="card">
+<div class="card-body px-4">
+
+<div class="mb-3">
+<h6 class="tx-weight-8 tx-black mb-0 tx-16">Pecahan Module</h6>
+<span class="tx-12 tx-bold tx-softgray">Download Setiap Module</span>
+ </div>
+
+<div id="module-download">
+
+<div class="row">
+<div class="col-lg-8">
+<div class="label">Download Module #1 - Video Ad Explainer</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="1" href="https://rootpixel.box.com/shared/static/e19jerj4g6ufadfzg1qawgzsgfxaq9i1.zip" data-module="1" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="tx-danger mt-4">Jika sudah men-download modul diatas, tidak perlu download
+modul part.</p>
+<h6 class="tx-14 tx-weight-7 my-3">Part Module #1</h6>
+<div class="row list-small ">
+<div class="col-1 pr-0">
+<div class="label justify-content-center">1</div>
+</div>
+<div class="col-lg-7">
+<div class="label">Download Module #1 - Module 1 - Part</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="69" href="https://rootpixel.box.com/s/4djlh75w1mz4phicewvjobgobaghviev" data-module="4" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="d-block mb-4">
+<div class="row ">
+<div class="col-lg-8">
+<div class="label">Download Module #2 - Social Media Kit</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="2" href="https://rootpixel.box.com/shared/static/55fxoae43cmait8cqnds2f0ptmlujyg1.zip" data-module="1" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="tx-danger mt-4">Jika sudah men-download modul diatas, tidak perlu download
+modul part.</p>
+<h6 class="tx-14 tx-weight-7 my-3">Part Module #1</h6>
+<div class="row list-small ">
+<div class="col-1 pr-0">
+<div class="label justify-content-center">1</div>
+</div>
+<div class="col-lg-7">
+<div class="label">Download Module #1 - Module 2 - Part</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="70" href="https://rootpixel.box.com/s/q5qm65o7xen1vvz18q7apgopn0o8zd96" data-module="4" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="d-block mb-4">
+<div class="row ">
+<div class="col-lg-8">
+<div class="label">Download Module #3 - Microblog</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="3" href="https://rootpixel.app.box.com/s/ae1knrokyhsgrvp6fgz6szthbs8ihu0e" data-module="1" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="tx-danger mt-4">Jika sudah men-download modul diatas, tidak perlu download
+modul part.</p>
+<h6 class="tx-14 tx-weight-7 my-3">Part Module #1</h6>
+<div class="row list-small ">
+<div class="col-1 pr-0">
+<div class="label justify-content-center">1</div>
+</div>
+<div class="col-lg-7">
+<div class="label">Download Module #1 - Module 3 - Part</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="73" href="https://rootpixel.box.com/s/s0rilfd8rkc80q0hll4tkapyb7wfgwpj" data-module="4" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="d-block mb-4">
+<div class="row ">
+<div class="col-lg-8">
+<div class="label">Download Module #4 - Instagram Content</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="5" href="https://rootpixel.box.com/shared/static/e1pwqqkvmgpjbp5nwkuefgnkbgtr9eg7.zip" data-module="1" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="tx-danger mt-4">Jika sudah men-download modul diatas, tidak perlu download
+modul part.</p>
+<h6 class="tx-14 tx-weight-7 my-3">Part Module #1</h6>
+<div class="row list-small ">
+<div class="col-1 pr-0">
+<div class="label justify-content-center">1</div>
+</div>
+<div class="col-lg-7">
+<div class="label">Download Module #1 - Module 4 - Part</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="74" href="https://rootpixel.box.com/s/4u636zd4q53m21xscg9b6iqwsbtdps0w" data-module="4" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="d-block mb-4">
+<div class="row ">
+<div class="col-lg-8">
+<div class="label">Download Module #5 - Facebook Feed</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="6" href="https://rootpixel.box.com/shared/static/go8ist9go8qr1ohs5stmgomw15nnm6iv.zip" data-module="1" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row ">
+<div class="col-lg-8">
+<div class="label">Download Module #6 - Youtube Feed</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="7" href="https://rootpixel.box.com/shared/static/lwemam5378d4rea432x1zi40drn3ocpl.zip" data-module="1" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row ">
+<div class="col-lg-8">
+<div class="label">Download Module #7 - Google Feed</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="8" href="https://rootpixel.box.com/shared/static/ptpr4kavt7yrszi82sbci2gsgzjlv2np.zip" data-module="1" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row ">
+<div class="col-lg-8">
+<div class="label">Download Module #8 - WhatsApp Feed</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="9" href="https://rootpixel.box.com/shared/static/uyq1keexrbcqcf0ovvjp1tqf1ofhrebe.zip" data-module="1" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row ">
+<div class="col-lg-8">
+<div class="label">Download Module #9 - Twitter Feed</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="10" href="https://rootpixel.box.com/shared/static/ikpp4x2j8x9h7eho76u91mc8hdwklko0.zip" data-module="1" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row ">
+<div class="col-lg-8">
+<div class="label">Download Module #10 - Marketplace Feed</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="11" href="https://rootpixel.box.com/shared/static/n5086h8uwpp8znqdky1u45h1gah6uc7o.zip" data-module="1" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row ">
+<div class="col-lg-8">
+<div class="label">Download Module #11 - Stock Photo and Video</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="12" href="https://rootpixel.box.com/s/zgdkq813eokhi7rwym6gxm5mtbca8u4k" data-module="1" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<p class="tx-danger mt-4">Jika sudah men-download modul diatas, tidak perlu download
+modul part.</p>
+<h6 class="tx-14 tx-weight-7 my-3">Part Module #1</h6>
+<div class="row list-small ">
+<div class="col-1 pr-0">
+<div class="label justify-content-center">1</div>
+</div>
+<div class="col-lg-7">
+<div class="label">Download Module #1 - Module 11 - Part</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="80" href="https://rootpixel.box.com/s/rhouf1d6w24gztqu298pbev8phroro7d" data-module="4" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+ </div>
+</div>
+<div class="row list-small ">
+<div class="col-1 pr-0">
+<div class="label justify-content-center">2</div>
+</div>
+<div class="col-lg-7">
+<div class="label">Download Module #2 - Module 11 - Part</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="81" href="https://rootpixel.box.com/s/zgdkq813eokhi7rwym6gxm5mtbca8u4k" data-module="4" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="d-block mb-4">
+</div>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card">
+<div class="card-badge">
+<img src="https://member.rootpixel.net/img/icons/exclamation.png" alt="">
+</div>
+<div class="card-body pb-4">
+
+<h6 class="tx-weight-8">Pecahan Module</h6>
+<p class="tx-12 tx-weight-6 tx-height-7 tx-softgray">Download Produk Levidio The Feed disini,
+Ada 2 Versi , Jika anda sudah mengunduh satu link tidak perlu
+unduh yang versi part , begitu pula sebaliknya. Jika anda Mengunduh versi Part , pastikan membaca cara unduh.txt ya</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-lg-8">
+<div class="card">
+<div class="card-body px-4">
+
+<div class="mb-3">
+<h6 class="tx-weight-8 tx-black mb-0 tx-16">Tutorial Module</h6>
+<span class="tx-12 tx-bold tx-softgray">Download Setiap Module</span>
+</div>
+
+<div id="module-download">
+
+<div class="row ">
+<div class="col-lg-8">
+<div class="label">Tutorial One Link</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="99" href="www.google.com" data-module="0" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row ">
+<div class="col-lg-8">
+<div class="label">Tutorial Part</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="100" href="https://rootpixel.box.com/s/ymcq1boowj9vgg670db0rsvbc8uzxd4w" data-module="0" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+ <div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card">
+<div class="card-badge">
+<img src="https://member.rootpixel.net/img/icons/exclamation.png" alt="">
+</div>
+<div class="card-body pb-4">
+
+<h6 class="tx-weight-8">Tutorial Module</h6>
+<p class="tx-12 tx-weight-6 tx-height-7 tx-softgray">Pilih salah satu one link atau part,
+Tutorial wajib diunduh untuk memudahkan kita
+memulai editing ya!</p>
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-lg-8">
+<div class="card">
+<div class="card-body px-4">
+
+<div class="mb-3">
+<h6 class="tx-weight-8 tx-black mb-0 tx-16">Bonus Module</h6>
+<span class="tx-12 tx-bold tx-softgray">Download Setiap Module</span>
+</div>
+
+<div id="module-download">
+
+<div class="row ">
+<div class="col-lg-8">
+<div class="label">Download Module #1
+- Levidio The Feed - Bonus</div>
+</div>
+<div class="col">
+<div class="input-group">
+<a type="button" data-id="6" href="https://levidio.id/thefeed/b/dh7w32/aibyueg978364/bdbyuwbydw.html" data-module="3" class="btn px-2 btn---download-module" style="width: 100px">Download</a>
+<div class="input-group-append">
+<div class="input-group-text">
+<img src="https://member.rootpixel.net/img/icons/arrow-down-white.png" alt="">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card">
+<div class="card-badge">
+<img src="https://member.rootpixel.net/img/icons/exclamation.png" alt="">
+</div>
+<div class="card-body pb-4">
+ 
+<h6 class="tx-weight-8">Bonus Module</h6>
+<p class="tx-12 tx-weight-6 tx-height-7 tx-softgray">Semua bertambah manis dengan bonus ;), untuk bonus afiliasi lainnya silahkan hubungi affiliate yang bersangkutan.</p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<footer>
+Copyright 2019 Rootpixel - All Rights Reserved
+</footer> </div>
+</div>
+<div id="mBonus" class="modal fade affiliation" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal-dialog modal-lg" role="document">
+<div class="modal-content pb-5">
+<div class="modal-header border-none">
+<div class="modal-title">
+<h5>Bonus Affiliate</h5>
+<span>Akses bonus affiliate</span>
+</div>
+<button class="close" data-dismiss="modal" aria-label="Close">
+<span aria-hidden="true">&times;</span>
+</button>
+</div>
+<div class="modal-body">
+<div class="d-flex align-items-center mb-5">
+<div class="img-placeholder w-75px h-75px rd-xxs">
+<img src="https://member.rootpixel.net/img/users/man-2.png" alt="">
+</div>
+<div class="ml-3">
+<h6 class="tx-18 tx-weight-8 mb-0 text-name"></h6>
+<span class="tx-16 tx-softgray tx-weight-6 text-username"></span>
+</div>
+</div>
+
+<div class="box-scroll" id="content-bonus-affiliate">
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="layover-fixed"></div>
+<script type="text/javascript" src="https://member.rootpixel.net/js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="https://member.rootpixel.net/plugin/bootstrap-datepicker/moment.min.js"></script>
+<script type="text/javascript" src="https://member.rootpixel.net/plugin/bootstrap/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://member.rootpixel.net/plugin/bootstrap/popper.min.js"></script>
+<script type="text/javascript" src="https://member.rootpixel.net/plugin/niceselect/jquery.nice-select.min.js"></script>
+<script type="text/javascript" src="https://member.rootpixel.net/plugin/niceselect/jquery.nice-select-multiple.js"></script>
+<script type="text/javascript" src="https://member.rootpixel.net/plugin/sweetalert/sweetalert2.min.js"></script>
+<script type="text/javascript" src="https://member.rootpixel.net/plugin/chart/Chart.js"></script>
+<script type="text/javascript" src="https://member.rootpixel.net/plugin/copy-to-clipboard/jquery.copy-to-clipboard.js"></script>
+<script type="text/javascript" src="https://member.rootpixel.net/plugin/bootstrap-select/js/bootstrap-select.min.js"></script>
+<script type="text/javascript" src="https://member.rootpixel.net/plugin/bootstrap-datepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="https://member.rootpixel.net/js/membership.js"></script>
+<script type="text/javascript" src="https://member.rootpixel.net/js/form-validation.js"></script>
+<script type="text/javascript">
+    $('.submenu').on('show.bs.collapse', function () {
+        $(this).prev().addClass('active');
+    });
+    $('.submenu').on('hide.bs.collapse', function () {
+        $(this).prev().removeClass('active');
+    });
+    var w = $(window).height();
+    $(document).ready(function () {
+
+        $('select.niceselect').niceSelect();
+        $('[data-input="datetimepicker"]').datetimepicker({
+            format: 'DD MMM YYYY - hh:mm A',
+            widgetPositioning: {
+                horizontal: 'auto',
+                vertical: 'bottom'
+            },
+            allowInputToggle: true,
+            ignoreReadonly: true
+        });
+
+        $('[data-click="copy-button"]').on('click', function (e) {
+            e.stopPropagation();
+        }).tooltip({
+            trigger: 'show',
+            title: 'copied',
+            placement: 'bottom',
+            delay: {
+                'show': 0,
+                'hide': 1000
+            },
+
+        });
+    });
+
+    function uploadFile(id) {
+        // console.log($(id)[0].files[0]);
+        if ($(id).val() != '') {
+            let file = $(id)[0].files[0];
+            let reader = new FileReader();
+
+            $(id + '-label').html(file.name);
+
+            reader.onload = function () {
+                console.log(this.result);
+                $(id).attr('value', this.result);
+                $(id + '-image').attr('src', this.result);
+            };
+            reader.readAsDataURL(file);
+        }
+    }
+
+    
+    
+    
+    
+
+    
+    
+    
+
+    $('#notification-refresh').on('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const Available = (url, avatar, user, message, time) => `
+            <hr class="divider my-0" style="height:0;">
+            <hr class="divider my-0" style="height:0;">
+                <a href="${url}" class="tx-softgray">
+                    <li class="media px-4 py-3 hover-bg-color-light-5 fade-animation-2">
+                        <div class="w-40px h-40px img-fit-cover rd-circle mr-3">
+                            <img src="${avatar}" alt="..." class="">
+                        </div>
+                        <div class="media-body tx-8">
+                            <h6 class="mt-0 mb-0 tx-14 tx-weight-7"
+                                style="line-height: 1.8em;">${user},</h6>
+                            <p class="my-0 tx-10" style="line-height: 1em;">
+                                ${message}</p>
+                                <span class="tx-10" style="line-height: 1em;">${time}</span>
+                        </div>
+                    </li>
+                </a>`;
+        const NotAvailable = (image) => `
+            <img src="${image}" width="120px" alt="" class="mx-auto my-2 mt-4">
+                <p class="tx-center tx-12 tx-softgray mb-4">Belum ada notifikasi baru</p>
+        `;
+
+        $.get({
+            url: 'https://member.rootpixel.net/ajax/notifications/refresh/4',
+            success: (response) => {
+                $('#notification-list').empty();
+                if (response.data.length > 0) {
+                    $.each(response.data, (key, val) => {
+                        $('#notification-list').append(Available(val.data.url, val.data.avatar, val.data.user, val.data.message, val.time));
+                    })
+                } else {
+                    $('#notification-list').append(NotAvailable('https://member.rootpixel.net/img/other/5.png'));
+                }
+                $('#navbar-notification-count').text(response.message);
+            }
+        });
+
+    })
+</script>
+
+<script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function () {
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/5e7b26e869e9320caabcc636/default';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
+
+<script>
+        let bonus_affiliate_link = function (n, name, description) {
+            return `
+                            <h6 class="tx-dark tx-weight-8 mb-0">Akses Bonus ` + (n + 1) + `</h6>
+                                        <div class="table-responsive">
+                                            <table class="table-modal">
+                                                <tbody>
+                                                <tr>
+                                                    <td>` + name + `</td>
+                                                    <td>Link Download</td>
+                                                    <td class="url-text" data-link="` + description + `">
+                                                        ` + description + `
+            <a href="#" class="float-right tx-primary tx-10 tx-weight-6 btn-copy"><img
+                    src="https://member.rootpixel.net/img/icons/copy.png" class="w-10px mr-1" alt="">
+                                                            COPY</a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="` + description + `" target="_blank"
+                                                           class="btn-link tx-primary tx-weight-8">Download</a>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <hr>
+            `
+        }
+        let bonus_affiliate_custom = function (n, name, description) {
+            return `
+                                                        <h6 class="tx-dark tx-weight-8 mb-4 mt-4">Akses Bonus ` + (n + 1) + `</h6>
+                                        <h6 class="tx-weight-6 tx-14 mb-3">` + name + `</h6>
+                                        <div class="py-4 px-3 pb-5 rd-xs border-softgray-2">
+                                          ` + description + `
+            </div>
+            <hr>
+`
+        }
+        $('.btn---download-module').click(function (e) {
+            e.preventDefault();
+            var id = $(this).data('id');
+            var url = $(this).data('url');
+            var module = $(this).data('module');
+            $.post({
+                url: 'https://member.rootpixel.net/ajax/dashboard/member/product/access/download',
+                type: 'POST',
+                data: {
+                    '_token': 'd5j1QW1pHqwYXCZtbMbKr1RcuMOErWE53pdb1biZ',
+                    'id': id,
+                    'module': module
+                },
+                success: (response) => {
+                    if (response.status === "success") {
+                        window.open(url);
+                        document.location.reload();
+                    }
+                }
+            })
+        })
+
+        $('.btn-bonus-affiliate').on('click', function (el) {
+            if ($('#content-bonus-affiliate').children().length > 0) {
+                $('#content-bonus-affiliate').children().remove();
+            }
+            $('.text-name').text($(this).parent().parent().find('.border-right h6').text());
+            $('.text-username').text($(this).parent().parent().find('.border-right span').text());
+            $.each($(this).data('bonus'), function (n, response) {
+                if (response.bonus.type == 1) {
+                    $('#content-bonus-affiliate').append(bonus_affiliate_link(n, response.bonus.name, response.bonus.description))
+                } else {
+                    $('#content-bonus-affiliate').append(bonus_affiliate_custom(n, response.bonus.name, response.bonus.description))
+                }
+            });
+            $('#mBonus').modal('show');
+        });
+
+        $('.btn-copy').click(function () {
+            let temp = $("<input>");
+            temp.val($(this).parent().data('link'));
+            $(this).append(temp);
+            temp.focus();
+            temp.select();
+            document.execCommand('copy');
+            temp.remove();
+        });
+    </script>
+</body>
+</html>
